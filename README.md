@@ -12,8 +12,9 @@ ByteTrackはIoUのみでID対応付けを行うため、隣接するフレーム
 
 ## Usage
 sample_entire_raft.pyと同じ階層で以下の通りに実行。
+(デフォルトで./videos/20200914_2_cam1.aviという動画が指定されていますが、hoge.mp4とかに置き換えてください。sample_entire_raft内でも同様に設定されているので、置き換えてください。）
 ```
-python3 sample entire raft.py video –path ./videos/20200914 2 cam1.avi -n yolox-x -cpretrained/yolox x.pth –match thresh 0.8 –track thresh 0.7 –fp16 –fuse –save result –raft model RAFT/models/raft-sintel.pth
+python3 sample entire raft.py video –path ./videos/20200914_2_cam1.avi -n yolox-x -cpretrained/yolox x.pth –match thresh 0.8 –track thresh 0.7 –fp16 –fuse –save result –raft model RAFT/models/raft-sintel.pth
 –nms 0.45 –conf 0.1
 ```
 

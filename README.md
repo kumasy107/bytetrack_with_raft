@@ -1,6 +1,11 @@
 # bytetrack_with_raft
 
 ## Abstract
+
+https://github.com/kumasy107/bytetrack_with_raft/assets/64134440/4444a4f2-644c-4d37-8bdf-6dfd68341092
+
+
+
 ByteTrackはIoUのみでID対応付けを行うため、隣接するフレーム間での対応付けはめっぽう強いものの、他の物体による遮蔽（オクルージョン）に対して弱い。
 その対策として、オプティカルフロー（画面内での物体の動きベクトル）をIoUと紐付けることで、オクルージョンに対応することを試みた。
 物体検出ではYOLOX、複数物体追跡ではByteTrack、オプティカルフローの予測にはRAFTを用いている。

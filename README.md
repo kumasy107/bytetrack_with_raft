@@ -13,7 +13,7 @@ As a detector, a tracker and an optical flow predictor, we use YOLOX, ByteTrack 
 
 + In this study, we track cars at intersections because many occlusions happen there.
 + We installed a camera as the same height as traffic signal at an intersection.
-+ When occlusion occurred, ours can continue to track cars more then 90% although ByteTrack tracks about 40%.
++ When occlusion occurred, ours can continue to track cars precisely more than 90% although ByteTrack tracks about 40%.
 + In the case of tracking a car at an intersection, both MOTA and IDF1 are improved over ByteTrack's.
 + No real time.
 

@@ -16,6 +16,10 @@ ByteTrackはIoUのみでID対応付けを行うため、隣接するフレーム
 + 30フレームの処理に20秒ほどかかる。そのため、現状ではリアルタイム性がない。RAFTを別の手法に変えると、実行速度の向上が期待できる。
 
 ## Usage
+This repository is based on [ByteTrack](https://github.com/ifzhang/ByteTrack).
+
+You can get YOLOX pretrained model from [here](https://github.com/Megvii-BaseDetection/YOLOX/tree/0.1.0).
+
 sample_entire_raft.pyと同じ階層で以下の通りに実行。
 (デフォルトで./videos/20200914_2_cam1.aviという動画が指定されていますが、hoge.mp4とかに置き換えてください。sample_entire_raft内でも同様に設定されているので、置き換えてください。）
 ```

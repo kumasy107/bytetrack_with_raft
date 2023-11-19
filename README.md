@@ -9,9 +9,9 @@ To solve this problem, we propose an occlusion-resistant tracker that can track 
 As a detector, tracker and optical flow predictor, we use YOLOX, ByteTrack and RAFT respectively.
 
 + In this study, we track cars at intersections because many occlusions happen there.
-+ We installed a camera as the same height as traffic signal at intersection.
++ We installed a camera as the same height as traffic signal at an intersection.
 + When occlusion occurred, ours can continue to track cars more then 90% although ByteTrack tracks about 40%.
-+ Both MOTA and IDF1 are improved over ByteTrack.
++ In the case of tracking a car at an intersection, both MOTA and IDF1 are improved over ByteTrack's.
 + No real time.
 
 ## Usage

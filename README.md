@@ -5,7 +5,13 @@
 https://github.com/kumasy107/bytetrack_with_raft/assets/64134440/4444a4f2-644c-4d37-8bdf-6dfd68341092
 
 ByteTrack is very strong Multi Object Tracker during tracking small objects like people etc., but it isn't good at tracking big objects like cars because ByteTrack is tracking with only IoU and vulnerable to occlusion.
+
+Also, for another reason, the shape of the bounding box is deformed just before the occlusion starts.
+
 To solve this problem, we propose an occlusion-resistant tracker that can track cars by using optical flow.
+
+And we also propose the robust way to save bounding box's shape just before the occlusion starts.
+
 As a detector, tracker and optical flow predictor, we use YOLOX, ByteTrack and RAFT respectively.
 
 + In this study, we track cars at intersections because many occlusions happen there.

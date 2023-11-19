@@ -23,7 +23,7 @@ You can get YOLOX pretrained model from [here](https://github.com/Megvii-BaseDet
 sample_entire_raft.pyと同じ階層で以下の通りに実行。
 (デフォルトで./videos/20200914_2_cam1.aviという動画が指定されていますが、hoge.mp4とかに置き換えてください。sample_entire_raft内でも同様に設定されているので、置き換えてください。）
 ```
-python3 sample_entire_raft.py video –-path ./videos/20200914_2_cam1.avi -n yolox-x -c pretrained/yolox_x.pth –match thresh 0.8 –track thresh 0.7 –fp16 –fuse –save result –raft model RAFT/models/raft-sintel.pth –nms 0.45 –conf 0.1
+python3 sample_entire_raft.py video --path ./videos/20200914_2_cam1.avi -n yolox-x -c pretrained/yolox_x.pth --match_thresh 0.8 --track_thresh 0.7 --fp16 --fuse --save_result --raft model RAFT/models/raft-sintel.pth --nms 0.45 --conf 0.1
 ```
 
 実行に必要なライブラリ等は後にまとめる予定。

@@ -15,7 +15,7 @@ To solve this problem, we propose an occlusion-resistant tracker that can track 
 
 As a detector, a tracker and an optical flow predictor, we use YOLOX, ByteTrack and RAFT respectively.
 
-In the fig below, OF stands for optical flow. We predict OF at frame t with Kalman filter, and compare it to OF at frame t obtained with RAFT. We consider IoU as well as OF in our comparisons.
+In the fig below, we show the way to compare predicted to detected. OF stands for optical flow. We predict OF at frame t with Kalman filter, and compare it to OF at frame t obtained with RAFT. We consider IoU as well as OF in our comparisons.
 
 <img width="400" alt="predict_en" src="https://github.com/kumasy107/bytetrack_with_raft/assets/64134440/61856f66-1ec0-4a8d-b3c9-7a751fa651fd">
 

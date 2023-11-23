@@ -10,6 +10,10 @@ For another reason, the shape of the bounding box is deformed just before the oc
 To solve this problem, we propose an occlusion-resistant tracker that can track cars by using optical flow, and we also propose the robust way to save bounding box's shape just before the occlusion starts.
 
 As a detector, a tracker and an optical flow predictor, we use YOLOX, ByteTrack and RAFT respectively.
+In the fig below, OF stands for optical flow. We predict OF at frame t with Kalman filter, and compare it to OF at frame t obtained with RAFT.
+
+![predict_en](https://github.com/kumasy107/bytetrack_with_raft/assets/64134440/61856f66-1ec0-4a8d-b3c9-7a751fa651fd)
+
 
 + In this study, we track cars at intersections because many occlusions happen there.
 + We installed a camera as the same height as traffic signal at an intersection.

@@ -2,7 +2,11 @@
 
 ## Abstract
 
-https://github.com/kumasy107/bytetrack_with_raft/assets/64134440/4444a4f2-644c-4d37-8bdf-6dfd68341092
+
+
+https://github.com/kumasy107/bytetrack_with_raft/assets/64134440/1096f289-2e1f-42de-b84b-ef3d241a012e
+
+
 
 ByteTrack is very strong Multi Object Tracker during tracking small objects like people etc., but it isn't good at tracking big objects like cars because ByteTrack is tracking with only using IoU and vulnerable to occlusion.
 For another reason, the shape of the bounding box is deformed just before the occlusion starts.
@@ -10,9 +14,10 @@ For another reason, the shape of the bounding box is deformed just before the oc
 To solve this problem, we propose an occlusion-resistant tracker that can track cars by using optical flow, and we also propose the robust way to save bounding box's shape just before the occlusion starts.
 
 As a detector, a tracker and an optical flow predictor, we use YOLOX, ByteTrack and RAFT respectively.
-In the fig below, OF stands for optical flow. We predict OF at frame t with Kalman filter, and compare it to OF at frame t obtained with RAFT.
 
-![predict_en](https://github.com/kumasy107/bytetrack_with_raft/assets/64134440/61856f66-1ec0-4a8d-b3c9-7a751fa651fd)
+In the fig below, OF stands for optical flow. We predict OF at frame t with Kalman filter, and compare it to OF at frame t obtained with RAFT. We consider IoU as well as OF in our comparisons.
+
+<img width="400" alt="predict_en" src="https://github.com/kumasy107/bytetrack_with_raft/assets/64134440/61856f66-1ec0-4a8d-b3c9-7a751fa651fd">
 
 
 + In this study, we track cars at intersections because many occlusions happen there.

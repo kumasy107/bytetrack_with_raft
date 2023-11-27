@@ -28,19 +28,22 @@ In the fig below, we show the way to get information about OF and positions. OF 
 
 ## Usage
 This repository is based on [ByteTrack](https://github.com/ifzhang/ByteTrack).
+The code is implemented with Python=3.9.0 and torch=2.1.1 with cuda-11.1
 
 1. clone this repository
    ```
    git clone https://github.com/kumasy107/bytetrack_with_raft
    cd bytetrack_with_raft
    ```
-2. Install libraries
+2. Install libraries(We must first install numpy due to the dependency)
    ```
+   pip install numpy
    pip install -r requirements.txt
    ```
 3. Set pretrained weight below ./pretrained
    You can get YOLOX pretrained model from [here](https://github.com/Megvii-BaseDetection/YOLOX/tree/0.1.0).
 4. put your video below ./videos and predict by running 
    ```
-   python3 sample_entire_raft.py video --path ./videos/hoge.avi -n yolox-x -c pretrained/yolox_x.pth --match_thresh 0.8 --track_thresh 0.7 --fp16 --fuse --save_result --raft model RAFT/models/raft-sintel.pth --nms 0.45 --conf 0.1
+   python sample_entire_raft.py video --path ./videos/hoge.avi -n yolox-x -c pretrained/yolox_x.pth --match_thresh 0.8 --track_thresh 0.7 --fp16 --fuse --save_result --raft_model RAFT/models/raft-sintel.pth --nms 0.45 --conf 0.1
    ```
+we can get tracking result below ./multitracking_result

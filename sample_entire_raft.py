@@ -247,12 +247,14 @@ def imageflow_demo(predictor, args):
     # 動画からfpsを調べ、capに設定する
     cap_fps = cap.get(cv2.CAP_PROP_FPS)
     # trackingの結果を出力するファイルの名前
-    result_filename = "YOLOX_outputs/yolox_x/track_result/20200914_2_cam_multi_v4_matchthresh{}_trackthresh{}.txt".format(
-        args.match_thresh, args.track_thresh
+    os.makedirs("YOLOX_outputs/yolox_x/track_result", exist_ok=True)
+    result_filename = "YOLOX_outputs/yolox_x/track_result/{}_matchthresh{}_trackthresh{}.txt".format(
+        args.path.split("/")[-1].split(".")[0], args.match_thresh, args.track_thresh
     )
 
     # バウンディングボックスを書き込んだ動画の名前
-    save_path = "multitracking_result/cam1_matchthresh08_trackthresh07.mp4"
+    os.makedirs("multitracking_result", exist_ok=True)
+    save_path = "multitracking_result/{}_matchthresh{}_trackthresh{}.mp4".format(args.path.split("/")[-1].split(".")[0], args.match_thresh, args.track_thresh)
     logger.info(f"video save_path is {save_path}")
     # 上記の動画を出力するのに用いる
     writer = cv2.VideoWriter(

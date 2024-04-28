@@ -8,21 +8,21 @@ https://github.com/kumasy107/bytetrack_with_raft/assets/64134440/1096f289-2e1f-4
 
 
 
-ByteTrack is very strong Multi Object Tracker during tracking small objects like people etc., but it isn't good at tracking big objects like cars because ByteTrack is tracking with only using IoU and vulnerable to occlusion.
+ByteTrack is very strong Multi Object Tracker for tracking small objects like people etc., but it isn't good at tracking big objects like cars because ByteTrack is tracking only using IoU and is vulnerable to occlusion.
 For another reason, the shape of the bounding box is deformed just before the occlusion starts.
 
-To solve this problem, we propose an occlusion-resistant tracker that can track cars by using optical flow, and we also propose the robust way to save bounding box's shape just before the occlusion starts.
+To solve this problem, we propose an occlusion-resistant tracker that can track cars by using optical flow, and we also propose a robust way to save the bounding box's shape just before the occlusion starts.
 
-As a detector, a tracker and an optical flow predictor, we use YOLOX, ByteTrack and RAFT respectively.
+As a detector, a tracker, and an optical flow predictor, we use YOLOX, ByteTrack, and RAFT respectively.
 
-In the fig below, we show the way to get information about OF and positions. OF stands for optical flow. We predict OF at frame t with Kalman filter, and compare it to OF at frame t obtained with RAFT. We consider IoU as well as OF in our comparisons.
+In the figure below, we show the way to get information about OF and positions. OF stands for optical flow. We predict OF at frame t with the Kalman filter and compare it to OF at frame t obtained with RAFT. We consider IoU as well as OF in our comparisons.
 
 <img width="400" alt="predict_en" src="https://github.com/kumasy107/bytetrack_with_raft/assets/64134440/61856f66-1ec0-4a8d-b3c9-7a751fa651fd">
 
 
 + In this study, we track cars at intersections because many occlusions happen there.
-+ We installed a camera as the same height as traffic signal at an intersection.
-+ When occlusion occurred, ours can continue to track cars precisely more than 90% although ByteTrack tracks about 40%.
++ We installed a camera as the same height as the traffic signal at an intersection.
++ When an occlusion occurs, ours can continue to track cars precisely more than 90% although ByteTrack tracks about 40%.
 + In the case of tracking a car at an intersection, both MOTA and IDF1 are improved over ByteTrack's.
 + No real time.
 
@@ -40,8 +40,8 @@ The code is implemented with Python=3.9.0 and torch=2.1.1 with cuda-11.1
    pip install numpy
    pip install -r requirements.txt
    ```
-3. Set pretrained weight below ./pretrained
-   You can get YOLOX pretrained model from [here](https://github.com/Megvii-BaseDetection/YOLOX/tree/0.1.0).
+3. Set pre-trained weight below ./pretrained
+   You can get YOLOX pre-trained model from [here](https://github.com/Megvii-BaseDetection/YOLOX/tree/0.1.0).
 4. put your video below ./videos and predict by running 
    ```
    python sample_entire_raft.py video --path ./videos/hoge.avi -n yolox-x -c pretrained/yolox_x.pth --match_thresh 0.8 --track_thresh 0.7 --fp16 --fuse --save_result --raft_model RAFT/models/raft-sintel.pth --nms 0.45 --conf 0.1
